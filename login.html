@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <img src="assets/img/logo.png" alt="Meta Wi-Fi" class="logo">
+        <h1>Iniciar sesión</h1>
+    </header>
+
+    <main>
+        <form id="login-form" class="form">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Iniciar sesión</button>
+            <p id="error-message" style="color: red; display: none;">Usuario o contraseña incorrectos.</p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meta Wi-Fi - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+

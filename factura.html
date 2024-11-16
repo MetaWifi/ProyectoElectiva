@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Factura</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <img src="assets/img/logo.png" alt="Meta Wi-Fi" class="logo">
+        <h1>Generar Factura</h1>
+    </header>
+
+    <main>
+        <form id="invoice-form" class="form">
+            <label for="cliente">Nombre del Cliente:</label>
+            <input type="text" id="cliente" required>
+            <br>
+            <label for="servicio">Servicio:</label>
+            <input type="text" id="servicio" required>
+            <br>
+            <label for="monto">Monto:</label>
+            <input type="number" id="monto" required>
+            <br>
+            <button type="submit">Generar Factura</button>
+        </form>
+
+        <h3>Factura Generada:</h3>
+        <div id="invoice-display"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meta Wi-Fi - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
