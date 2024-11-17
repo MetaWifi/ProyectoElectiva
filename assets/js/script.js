@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+   
     // Gestión de inicio de sesión
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
@@ -8,13 +9,35 @@ document.addEventListener('DOMContentLoaded', function () {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            if (username === 'admin' && password === '123456') {
+            if (username === username && password === password) {
                 window.location.href = 'dashboard.html';
             } else {
                 document.getElementById('error-message').style.display = 'block';
             }
         });
     }
+     // Lista de usuarios registrados
+     const usuarios = [
+        { nombre: "Juan Pérez", username: "juan.perez", password: "12345" },
+        { nombre: "María López", username: "maria.lopez", password: "54321" },
+        { nombre: "Administrador", username: "admin", password: "123456" } // Usuario adicional
+    ];
+
+    // Función para manejar el inicio de sesión
+    function iniciarSesion(username, password) {
+        const usuarioEncontrado = usuarios.find(
+            u => u.username === username && u.password === password
+        );
+
+        if (usuarioEncontrado) {
+            alert(`¡Bienvenido, ${usuarioEncontrado.nombre}!`);
+            // Redirigir al dashboard u otra página
+            window.location.href = "dashboard.html";
+        } else {
+            document.getElementById('error-message').style.display = 'block';
+        }
+    }
+
 
     // Generar Factura
     const invoiceForm = document.getElementById('invoice-form');
