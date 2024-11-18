@@ -38,51 +38,57 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+// Generar Factura
+const invoiceForm = document.getElementById('invoice-form');
+if (invoiceForm) {
+    invoiceForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const cliente = document.getElementById('cliente').value;
+        const servicio = document.getElementById('servicio').value;
+        const monto = document.getElementById('monto').value;
+        const estado = document.getElementById('estado').value;
 
-    // Generar Factura
-    const invoiceForm = document.getElementById('invoice-form');
-    if (invoiceForm) {
-        invoiceForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const cliente = document.getElementById('cliente').value;
-            const servicio = document.getElementById('servicio').value;
-            const monto = document.getElementById('monto').value;
+        const factura = {
+            cliente,
+            servicio,
+            monto,
+            estado
+        };
 
-            const factura = {
-                cliente,
-                servicio,
-                monto
-            };
+        let facturas = JSON.parse(localStorage.getItem('facturas')) || [];
+        facturas.push(factura);
+        localStorage.setItem('facturas', JSON.stringify(facturas));
 
-            let facturas = JSON.parse(localStorage.getItem('facturas')) || [];
-            facturas.push(factura);
-            localStorage.setItem('facturas', JSON.stringify(facturas));
+        document.getElementById('invoice-display').innerHTML = `
+            <p><strong>Cliente:</strong> ${cliente}</p>
+            <p><strong>Servicio:</strong> ${servicio}</p>
+            <p><strong>Monto:</strong> $${monto}</p>
+            <p><strong>Estado:</strong> ${estado}</p>
+        `;
+    });
+}
 
-            document.getElementById('invoice-display').innerHTML = `
-                <p><strong>Cliente:</strong> ${cliente}</p>
-                <p><strong>Servicio:</strong> ${servicio}</p>
-                <p><strong>Monto:</strong> $${monto}</p>
-            `;
-        });
-    }
+// Mostrar Facturas con Estado
+if (document.getElementById('facturas-list')) {
+    const facturas = JSON.parse(localStorage.getItem('facturas')) || [];
+    let invoicesList = document.getElementById('facturas-list');
+    invoicesList.innerHTML = '';
 
-    // Mostrar Facturas
-    if (document.getElementById('facturas-list')) {
-        const facturas = JSON.parse(localStorage.getItem('facturas')) || [];
-        let invoicesList = document.getElementById('facturas-list');
-        invoicesList.innerHTML = '';
+    facturas.forEach(invoice => {
+        invoicesList.innerHTML += `
+            <div>
+                <p><strong>Cliente:</strong> ${invoice.cliente}</p>
+                <p><strong>Servicio:</strong> ${invoice.servicio}</p>
+                <p><strong>Monto:</strong> $${invoice.monto}</p>
+                <p><strong>Estado:</strong> ${invoice.estado}</p>
+                <hr>
+            </div>
+        `;
+    });
+}
 
-        facturas.forEach(invoice => {
-            invoicesList.innerHTML += `
-                <div>
-                    <p><strong>Cliente:</strong> ${invoice.cliente}</p>
-                    <p><strong>Servicio:</strong> ${invoice.servicio}</p>
-                    <p><strong>Monto:</strong> $${invoice.monto}</p>
-                    <hr>
-                </div>
-            `;
-        });
-    }
+   
+       
 
     // Perfil
     if (document.getElementById('edit-profile')) {
