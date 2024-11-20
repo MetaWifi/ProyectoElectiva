@@ -3,29 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de Facturas</title>
+    <title>Historial de Facturas - Meta-WiFi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #cd5a5c;
+            color: #fff;
+        }
+        header {
+            background-color: #520405;
+            padding: 11px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .main-content img {
+            width: 300px;
+            margin: 20px auto;
+        }
+        .main-content button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #cd5a5c;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 13px;
+            background-color: #4d0000;
+        }
+        
+    </style>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-
+<body class="login-body">
     <header>
-        <img src="assets/img/logo.png" alt="Meta Wi-Fi" class="logo">
-        <h1>Historial de Facturas</h1>
+        <img src="assets/img/logos.jpg" alt="Logo Tigo">
+        <nav>
+            <ul>
+                <li><a href="login.html">Inicia sesion</a></li>
+                <li><a href="register.html">Registrete</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="terms.html">Terminos y condiciones</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <a href="dashboard.html">Volver al Dashboard</a>
-    </nav>
-
-    <main>
-        <h2>Facturas Generadas:</h2>
+    <main style="margin: 0 auto 180px;color:black" >
+        <h1 style="color: black;">Historial de Facturas</h1>
         <div id="facturas-list"></div>
+        <button onclick="window.location.href='dashboard.html'" class="btn-secondary">Volver</button>
     </main>
-
     <footer>
-        <p>&copy; 2024 Meta Wi-Fi - Todos los derechos reservados</p>
+        <p>© 2024 Meta-Wifi. Todos los derechos reservados.</p>
     </footer>
-
     <script src="assets/js/script.js"></script>
 </body>
 </html>
