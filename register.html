@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Meta-WiFi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #680d0d;
+            color: #fff;
+        }
+        header {
+            background-color: #520405;
+            padding: 11px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .main-content img {
+            width: 300px;
+            margin: 20px auto;
+        }
+        .main-content button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #cc0003;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 13px;
+            background-color: #4d0000;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/script.js"></script>
+</head>
+<body class="login-body">
+    <header style="margin: 0 auto 40px;">
+        <img src="assets/img/logos.jpg" alt="Logo Tigo">
+        <nav>
+            <ul>
+                <li><a href="login.html">Inicia sesion</a></li>
+                <li><a href="register.html">Registrete</a></li>
+                <li><a href="login.html">Perfil</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="terms.html">Terminos y condiciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main >
+        <h1 style="color: black;">Regístrate en <span class="meta-title">META-WIFI</span></h1>
+        <form id="register-form">
+            <div class="input-group">
+                <input type="text" id="name" name="name" placeholder="Nombre completo" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+            </div>
+            <div class="input-group">
+                <input type="number" id="age" name="age" placeholder="Edad" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="study" name="study" placeholder="Estudio" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="username"  name="username" placeholder="usuario"    required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="contraseña"  required>
+            </div>
+
+            <button type="submit" class="btn-secondary">Registrar</button>
+        </form>
+
+        <p style="color: black;">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>.</p>
+    </main>
+    <footer>
+        <p>© 2024 Meta-Wifi. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
